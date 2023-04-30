@@ -11,6 +11,8 @@ import { FeaturesComponent } from './features/features.component';
 import { CategoryColorsComponent } from './category-colors/category-colors.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
+import { CustomerInfoComponent } from './customer-info/customer-info.component';
+import { CustomerAddressComponent } from './customer-address/customer-address.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
     FeaturesComponent,
     CategoryColorsComponent,
     PageNotFoundComponent,
-    ProductDetailsComponent
+    ProductDetailsComponent,
+    CustomerInfoComponent,
+    CustomerAddressComponent
   ],
   imports: [
     BrowserModule,
