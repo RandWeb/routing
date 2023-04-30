@@ -1,0 +1,18 @@
+.category-item{
+  padding: 8px 10px;
+  margin: 10px;
+  border-bottom: 1px;
+  text-decoration: none;
+  color: #966df1;
+  font-size: 18pt;
+  transition: all .3s;
+}
+.category-item:hover{
+  background-color: #c3b0ec;
+  color: white;
+}
+
+.router-link-active{
+  background-color: #966df1;
+  color: white;
+}
