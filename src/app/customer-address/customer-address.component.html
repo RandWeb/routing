@@ -1,7 +1,12 @@
 <div>
   <label for="">
+<!--    //on way binding
     <textarea>
       {{homeAddress}}
+    </textarea>-->
+    <textarea [(ngModel)]="homeAddress">
+
     </textarea>
+    <span>{{homeAddress}}</span>
   </label>
 </div>
