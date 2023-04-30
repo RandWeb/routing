@@ -4,4 +4,6 @@
     <a class="box-link" [routerLink]="['/products',product.id]">View Info</a>
     <a class="box-link" [routerLink]="['/products/info']" [queryParams]="{id:product.id,title:product.title}">View Info With Query String</a>
     <a class="box-link" (click)="goToProductWithQueryParam(product)">View Info With Query Stringin TS</a>
+
+    <button class="box-link" (click)="remove(product.id)">delete</button>
   </div>

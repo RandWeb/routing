@@ -7,15 +7,21 @@ import {Router} from "@angular/router";
   styleUrls: ['./products.component.css'],
 })
 export class ProductsComponent {
-  products = ([] = [
+  products = [] = [
     { id: 1, title: 'Product A' },
     { id: 2, title: 'Product B' },
     { id: 3, title: 'Product C' },
-  ]);
+  ];
 constructor(private route:Router) {
 }
 
   goToProductWithQueryParam(product: { id: number; title: string }):void {
     this.route.navigate(['products/info'],{queryParams:{id:product.id,title:product.title}})
+  }
+
+  removeProduct(id:number):void{
+  // @ts-ignore
+    this.products = this.products.filter(product=>product.id!=id);
+  alert("remove item success")
   }
 }

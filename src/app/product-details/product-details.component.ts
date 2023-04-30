@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {Router} from "@angular/router";
 
 @Component({
@@ -8,11 +8,14 @@ import {Router} from "@angular/router";
 })
 export class ProductDetailsComponent {
   @Input() product: any;
-
+  @Output() removeProduct = new EventEmitter();
   constructor(private route:Router) {
   }
 
   goToProductWithQueryParam(product: { id: number; title: string }):void {
     this.route.navigate(['products/info'],{queryParams:{id:product.id,title:product.title}})
+  }
+  remove(productId:number):void{
+    this.removeProduct.emit(productId);
   }
 }
