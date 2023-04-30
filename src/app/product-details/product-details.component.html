@@ -1,11 +1,7 @@
 <h1>products works!</h1>
-
-<div class="flex-container">
-  <app-product-details *ngFor="let product of products" [product]="product"></app-product-details>
-<!--  <div class="products-box" *ngFor="let product of products">
+  <div class="products-box" >
     <h3>{{product.title}}</h3>
     <a class="box-link" [routerLink]="['/products',product.id]">View Info</a>
     <a class="box-link" [routerLink]="['/products/info']" [queryParams]="{id:product.id,title:product.title}">View Info With Query String</a>
     <a class="box-link" (click)="goToProductWithQueryParam(product)">View Info With Query Stringin TS</a>
-  </div>-->
-</div>
+  </div>

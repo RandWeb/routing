@@ -10,6 +10,7 @@ import { ProductComponent } from './product-component/product-component.componen
 import { FeaturesComponent } from './features/features.component';
 import { CategoryColorsComponent } from './category-colors/category-colors.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { ProductDetailsComponent } from './product-details/product-details.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     ProductComponent,
     FeaturesComponent,
     CategoryColorsComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    ProductDetailsComponent
   ],
   imports: [
     BrowserModule,

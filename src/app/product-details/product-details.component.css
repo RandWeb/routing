@@ -1,0 +1,21 @@
+
+.products-box {
+  flex-basis: 10%;
+  margin: 10px;
+  padding: 20px;
+  border: 5px #ccc solid;
+  border-radius: 1rem;
+}
+
+.box-link{
+  display: inline-block;
+  padding: 10px 15px;
+  background-color: green;
+  color: #fff;
+  text-decoration: none;
+  margin: 4px 2px;
+}
+
+.box-link:hover{
+  background-color: greenyellow;
+}
