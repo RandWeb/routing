@@ -13,8 +13,9 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { CustomerInfoComponent } from './customer-info/customer-info.component';
 import { CustomerAddressComponent } from './customer-address/customer-address.component';
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { EmployeInfoComponent } from './employe-info/employe-info.component';
+import { FormReactiveComponent } from './form-reactive/form-reactive.component';
 
 @NgModule({
   declarations: [
@@ -29,12 +30,14 @@ import { EmployeInfoComponent } from './employe-info/employe-info.component';
     ProductDetailsComponent,
     CustomerInfoComponent,
     CustomerAddressComponent,
-    EmployeInfoComponent
+    EmployeInfoComponent,
+    FormReactiveComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
