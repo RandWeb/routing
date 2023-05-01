@@ -4,18 +4,21 @@
       <div class="card m-4">
         <div class="card-header">Employee Info</div>
         <div class="card-body">
-          <form #employeeForm="ngForm" (ngSubmit)="save(employeeForm.value)">
+          <form #employeeForm="ngForm" (ngSubmit)="employeeForm.form.valid && save(employeeForm.value)">
             <div class="form-group">
               <label for="firstName1">first name</label>
-              <input ngModel name="firstName" type="text" class="form-control" id="firstName1" placeholder="first name">
+              <input #firstName="ngModel" ngModel [ngClass]="{'is-invalid':employeeForm.submitted && firstName.invalid}" required minlength="4" maxlength="6" name="firstName" type="text" class="form-control" id="firstName1" placeholder="first name">
+              <div *ngIf="firstName.errors?.['required']" class="form-text text-muted alert-danger">first name is required.</div>
+              <div *ngIf="firstName.errors?.['minlength']" class="form-text text-muted text-danger"> max len for first name is 6.</div>
+              <div *ngIf="firstName.errors?.['maxlength']" class="form-text text-muted text-danger">min len for first name is 4.</div>
             </div>
             <div class="form-group">
               <label for="exampleInputPassword1">last name</label>
-              <input ngModel name="lastName" type="text" class="form-control" id="exampleInputPassword1" placeholder="last name">
+              <input ngModel #lastName="ngModel" name="lastName" type="text" class="form-control" id="exampleInputPassword1" [ngClass]="{'is-invalid':employeeForm.submitted && lastName.invalid}" required placeholder="last name">
             </div>
             <div class="form-group">
               <label for="exampleInputEmail1">email</label>
-              <input ngModel name="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="email">
+              <input ngModel #email="ngModel" name="email" type="email" class="form-control" id="exampleInputEmail1" [ngClass]="{'is-invalid':employeeForm.submitted && email.invalid}" aria-describedby="emailHelp" placeholder="email">
               <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
             </div>
             <div class="form-group">
