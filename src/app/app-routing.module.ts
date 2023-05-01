@@ -8,6 +8,7 @@ import {FeaturesComponent} from "./features/features.component";
 import {CategoryColorsComponent} from "./category-colors/category-colors.component";
 import {PageNotFoundComponent} from "./page-not-found/page-not-found.component";
 import {CustomerInfoComponent} from "./customer-info/customer-info.component";
+import {EmployeInfoComponent} from "./employe-info/employe-info.component";
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -23,6 +24,7 @@ const routes: Routes = [
     ]
   },
   {path:'customer/info',component:CustomerInfoComponent},
+  {path:'Employee/info',component:EmployeInfoComponent},
   {path: '**', component: PageNotFoundComponent},
 ];
 

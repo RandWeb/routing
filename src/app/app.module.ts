@@ -14,6 +14,7 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
 import { CustomerInfoComponent } from './customer-info/customer-info.component';
 import { CustomerAddressComponent } from './customer-address/customer-address.component';
 import {FormsModule} from "@angular/forms";
+import { EmployeInfoComponent } from './employe-info/employe-info.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import {FormsModule} from "@angular/forms";
     PageNotFoundComponent,
     ProductDetailsComponent,
     CustomerInfoComponent,
-    CustomerAddressComponent
+    CustomerAddressComponent,
+    EmployeInfoComponent
   ],
   imports: [
     BrowserModule,

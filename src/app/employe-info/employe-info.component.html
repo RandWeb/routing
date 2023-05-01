@@ -1,0 +1,58 @@
+<div class="container-fluid">
+  <div class="row flex-container align-content-center justify-content-center">
+    <div class="col-md-4">
+      <div class="card m-4">
+        <div class="card-header">Employee Info</div>
+        <div class="card-body">
+          <form #employeeForm="ngForm" (ngSubmit)="save(employeeForm.value)">
+            <div class="form-group">
+              <label for="firstName1">first name</label>
+              <input ngModel name="firstName" type="text" class="form-control" id="firstName1" placeholder="first name">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">last name</label>
+              <input ngModel name="lastName" type="text" class="form-control" id="exampleInputPassword1" placeholder="last name">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputEmail1">email</label>
+              <input ngModel name="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="email">
+              <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+            </div>
+            <div class="form-group">
+              <label for="grade1">grade</label>
+              <select class="form-control" id="grade1" name="grade" ngModel>
+                <option value="0">select item</option>
+                <option *ngFor="let grade of grades" [value]="grade.id">{{grade.title}}</option>
+              </select>
+            </div>
+            <button type="submit" class="btn btn-primary mt-3">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card m-4">
+        <div class="card-header">show Info</div>
+        <div class="card-body">
+            <div class="form-group">
+              <label for="firstName1">first name</label>
+              <input value="{{employee?.firstName}}" name="firstName" type="text" class="form-control" readonly placeholder="first name">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">last name</label>
+              <input value="{{employee?.lastName}}" name="lastName" type="text" class="form-control" readonly placeholder="last name">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputEmail1">email</label>
+              <input name="email" type="email" class="form-control" readonly value="{{employee?.email}}" placeholder="email">
+            </div>
+            <div class="form-group">
+              <label for="grade1">grade :</label>
+              <label for="grade1">{{employee?.grade}}</label>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
