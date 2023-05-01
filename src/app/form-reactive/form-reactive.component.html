@@ -24,5 +24,61 @@
     <label for="">email</label>
     <input type="text" formControlName="email"/>
   </div>
+  <fieldset>
+    <legend>
+      accouint info
+    </legend>
+    <div formGroupName="accountForm">
+      <div>
+        <label for="">account title</label>
+        <input type="text" formControlName="accountTitle"/>
+        <span class="text-danger"
+              *ngIf="customerForm.get('accountForm').get('accountTitle').touched && customerForm.get('accountForm').get('accountTitle').invalid">
+              <p *ngIf="customerForm.get('accountForm').get('accountTitle').errors?.['required']"> account title is required</p>
+        </span>
+      </div>
+      <div>
+        <label for="">account title</label>
+        <input type="text" formControlName="accountNumber"/>
+        <span class="text-danger"
+              *ngIf="accountInfoForm.get('accountNumber').touched && accountInfoForm.get('accountNumber').invalid">
+              <p *ngIf="accountInfoForm.get('accountNumber').errors?.['required']"> account Number is required</p>
+        </span>
+      </div>
+      <div>
+        <label for="">sheba</label>
+        <input type="text" formControlName="sheba"/>
+        <span class="text-danger"
+              *ngIf="accountInfoForm.get('sheba').touched && accountInfoForm.get('sheba').invalid">
+              <p *ngIf="accountInfoForm.get('sheba').errors?.['required']"> sheba is required</p>
+        </span>
+      </div>
+    </div>
+  </fieldset>
+  <fieldset style="border: 1px solid #ccc; margin: 10px 0; padding: 4px">
+    <div formArrayName="addressList">
+      <legend>address list</legend>
+      <div *ngFor="let item of addressListForm.controls; let i = index">
+        <div [formGroupName]="i">
+          <div>
+            <label>type</label>
+            <select formControlName="type">
+              <option selected>select type</option>
+              <option>home</option>
+              <option>work</option>
+            </select>
+          </div>
+          <div>
+            <label>address</label>
+            <textarea formControlName="address"></textarea>
+          </div>
+          <div>
+            <button (click)="removeAddress($event,i)">remove</button>
+          </div>
+        </div>
+      </div>
+      <button (click)="addNewAddress($event)">add address</button>
+    </div>
+  </fieldset>
   <button type="submit" [disabled]="customerForm.invalid"> save</button>
 </form>
